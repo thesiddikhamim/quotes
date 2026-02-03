@@ -446,28 +446,67 @@
             document.getElementById('progress-el').innerText = (currentIndex + 1) + " / " + filteredQuotes.length;
         }
 
+        let isAnimating = false;
+
         function resetCard() {
-            // No flip to reset
+            // Clean up animation classes just in case
+            const card = document.getElementById('card');
+            card.classList.remove('slide-out-left', 'slide-out-right', 'slide-in');
         }
 
         function next() {
-            resetCard();
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const card = document.getElementById('card');
+            card.classList.add('slide-out-left');
+
             setTimeout(() => {
                 currentIndex = (currentIndex + 1) % filteredQuotes.length;
                 updateUI();
-            }, 150);
+                card.classList.remove('slide-out-left');
+                card.classList.add('slide-in');
+
+                setTimeout(() => {
+                    card.classList.remove('slide-in');
+                    isAnimating = false;
+                }, 400); // Wait for slide-in to finish
+            }, 300); // Wait for slide-out to finish
         }
 
         function prev() {
-            resetCard();
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const card = document.getElementById('card');
+            card.classList.add('slide-out-right');
+
             setTimeout(() => {
                 currentIndex = (currentIndex - 1 + filteredQuotes.length) % filteredQuotes.length;
                 updateUI();
-            }, 150);
+                card.classList.remove('slide-out-right');
+                card.classList.add('slide-in');
+
+                setTimeout(() => {
+                    card.classList.remove('slide-in');
+                    isAnimating = false;
+                }, 400);
+            }, 300);
         }
 
         function shuffle() {
+            if (isAnimating) return;
+            // Immediate shuffle without swipe out, or maybe a fade? 
+            // Let's just do the same reset/update for now, maybe with a small fade effect manually or just instant.
+            // Existing logic had a small delay, let's keep it simple or trigger slide-in.
+
             resetCard();
+            // Animate only the new card appearing
+            const card = document.getElementById('card');
+
+            // Simple fade out/in simulation via opacity or just slide-in
+            card.style.opacity = '0';
+
             setTimeout(() => {
                 for (let i = filteredQuotes.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -475,7 +514,13 @@
                 }
                 currentIndex = 0;
                 updateUI();
-            }, 150);
+
+                card.style.opacity = '1';
+                card.classList.add('slide-in');
+                setTimeout(() => {
+                    card.classList.remove('slide-in');
+                }, 400);
+            }, 200);
         }
 
         // Swipe Functionality (Touch & Mouse)
