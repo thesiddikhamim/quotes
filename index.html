@@ -34,177 +34,22 @@
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
-        }
-
-        /* Search & Top Bar */
-        .top-bar-container {
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 100;
-        }
-
-        .search-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #fff;
-            padding: 8px;
-            border-radius: 60px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.02);
-        }
-
-        .search-wrapper:focus-within {
-            box-shadow: 0 12px 30px rgba(9, 132, 227, 0.15);
-            transform: translateY(-2px);
-            border-color: rgba(9, 132, 227, 0.1);
-        }
-
-        .search-icon-box {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            margin-left: 5px;
-        }
-
-        #search-input {
-            flex-grow: 1;
-            border: none;
-            outline: none;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background: transparent;
-            padding: 8px 0;
-        }
-
-        #search-input::placeholder {
-            color: #b2bec3;
-        }
-
-        .filter-toggle-btn {
-            background: #f1f2f6;
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: var(--transition);
-            flex-shrink: 0;
-        }
-
-        .filter-toggle-btn:hover,
-        .filter-toggle-btn.active {
-            background: var(--accent);
-            color: white;
-            transform: rotate(180deg);
-        }
-
-        .filter-toggle-btn.has-filters {
-            position: relative;
-        }
-
-        .filter-toggle-btn.has-filters::after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            width: 10px;
-            height: 10px;
-            background: #ff7675;
-            border: 2px solid #fff;
-            border-radius: 50%;
-        }
-
-        /* Filter Drawer */
-        .filter-drawer {
-            max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-            opacity: 0;
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            margin-top: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
-        .filter-drawer.open {
-            max-height: 300px;
-            opacity: 1;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .filter-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin: 0;
-            /* Override old margin */
-        }
-
-        .filter-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 0 5px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .clear-filters-link {
-            color: #ff7675;
-            cursor: pointer;
-            font-size: 0.8rem;
-            text-decoration: underline;
-            border: none;
-            background: none;
-            padding: 0;
-        }
-
-        .filter-chip {
-            padding: 8px 16px;
-            background: #eee;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 1px solid transparent;
-            color: var(--text-muted);
-        }
-
-        .filter-chip.active {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3);
-        }
+        /* Container & Cards */
 
         .container {
             width: 95%;
             max-width: 600px;
             perspective: 1000px;
+            position: relative;
         }
 
         .card-wrapper {
             position: relative;
             width: 100%;
-            height: 450px;
+            height: 500px;
             cursor: pointer;
             transform-style: preserve-3d;
             transition: var(--transition);
@@ -212,6 +57,35 @@
 
         .card-wrapper.flipped {
             transform: rotateY(180deg);
+        }
+
+        /* Swipe Animations */
+        .card-wrapper.slide-out-left {
+            transform: translateX(-120%) rotate(-10deg);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .card-wrapper.slide-out-right {
+            transform: translateX(120%) rotate(10deg);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .card-wrapper.slide-in {
+            animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: scale(0.9) translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
         }
 
         .card-face {
@@ -229,6 +103,7 @@
             border-radius: 24px;
             box-shadow: var(--shadow);
             text-align: center;
+            user-select: none;
         }
 
         .card-back {
@@ -279,6 +154,34 @@
             margin-top: 10px;
         }
 
+        /* Floating Filter Button */
+        .floating-filter-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: var(--text-muted);
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .floating-filter-btn:hover {
+            transform: scale(1.1);
+            background: white;
+            color: var(--accent);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
         .controls {
             margin-top: 30px;
             display: flex;
@@ -318,52 +221,149 @@
             font-size: 0.8rem;
             color: #b2bec3;
         }
+
+        /* Explore Overlay - Refined */
+        .explore-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 39, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            color: white;
+            overflow-y: auto;
+        }
+
+        .explore-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .explore-content-wrapper {
+            transform: translateY(50px);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .explore-overlay.open .explore-content-wrapper {
+            transform: translateY(0);
+        }
+
+        .explore-header {
+            padding: 30px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .explore-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .close-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .explore-grid {
+            padding: 0 20px 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .topic-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .topic-icon {
+            align-self: flex-end;
+            color: rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .topic-card:hover .topic-icon {
+            color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* Banner in explore */
+        .explore-banner {
+            margin: 0 20px 30px 20px;
+            background: linear-gradient(135deg, #a29bfe, #74b9ff);
+            border-radius: 24px;
+            padding: 30px;
+            color: #2d3436;
+            box-shadow: 0 10px 30px rgba(116, 185, 255, 0.2);
+        }
+
+        .banner-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .banner-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="top-bar-container">
-        <div class="search-wrapper">
-            <div class="search-icon-box">
-                <!-- Search SVG -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </div>
-            <input type="text" id="search-input" placeholder="Search for wisdom..." onkeyup="handleSearch(this.value)">
-            <button class="filter-toggle-btn" id="filter-toggle" onclick="toggleFilters()" title="Filter Topics">
-                <!-- Filter SVG: Sliders -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" y1="21" x2="4" y2="14"></line>
-                    <line x1="4" y1="10" x2="4" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12" y2="3"></line>
-                    <line x1="20" y1="21" x2="20" y2="16"></line>
-                    <line x1="20" y1="12" x2="20" y2="3"></line>
-                    <line x1="1" y1="14" x2="7" y2="14"></line>
-                    <line x1="9" y1="8" x2="15" y2="8"></line>
-                    <line x1="17" y1="16" x2="23" y2="16"></line>
-                </svg>
-            </button>
-        </div>
 
-        <div class="filter-drawer" id="filter-drawer">
-            <div class="filter-header">
-                <span>Filter by Topic</span>
-                <button class="clear-filters-link" onclick="clearFilters()">Reset All</button>
-            </div>
-            <div class="filter-section" id="filter-container">
-                <!-- Chips generated by JS -->
-            </div>
-        </div>
-    </div>
 
     <div class="container">
-        <div class="card-wrapper" id="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-wrapper" id="card">
             <div class="card-face card-front">
                 <div class="quote-text" id="quote-el"></div>
                 <div class="quote-author-name" id="quote-author-front"></div>
@@ -373,6 +373,14 @@
                 <div class="author-text-back" id="author-el-back"></div>
                 <div id="tags-el"></div>
             </div>
+        </div>
+
+        <!-- Floating Filter Button (Bottom Left of Card) -->
+        <div class="floating-filter-btn" onclick="openExplore(event)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
         </div>
     </div>
 
@@ -384,82 +392,59 @@
         <button onclick="next()">Next</button>
     </div>
 
-    <div class="hint">Click card to see details • Arrow keys to navigate</div>
+    <div class="hint">Tap card to flip • Swipe left/right to navigate</div>
+
+    <div class="explore-overlay" id="explore-overlay">
+        <div class="explore-content-wrapper">
+            <div class="explore-header">
+                <div class="explore-title">Explore Topics</div>
+                <button class="close-btn" onclick="closeExplore()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="explore-banner">
+                <div class="banner-title">Curated Wisdom</div>
+                <div class="banner-subtitle">Select a topic to filter your feed and discover insights that matter to
+                    you.</div>
+            </div>
+
+            <div class="explore-grid" id="explore-grid">
+                <!-- Topics generated by JS -->
+            </div>
+        </div>
+    </div>
 
     <script>
-        const allQuotes = [{ "Name": "\u201cDemocracy is the process by which people choose the man who'll get the blame.\u201d", "Person": "Bertrand Russell", "Type": "Politics", "TagsList": ["Politics"] },{ "Name": "\u201cDemocracy is government of the people, by the people, for the people.\u201d", "Person": "Abraham Lincoln", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "\u201cDemocracy is the worst form of government \u2014 except for all the others that have been tried.\u201d", "Person": "Winston Churchill", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "\u201cThe unexamined life is not worth living.\u201d ", "Person": "Socrates", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cKnowing yourself is the beginning of all wisdom.\u201d", "Person": "Aristotle", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cNo man ever steps in the same river twice, for it\u2019s not the same river and he\u2019s not the same man.\u201d", "Person": "Heraclitus", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cMan is born free, and everywhere he is in chains.\u201d", "Person": "Jean-Jacques Rousseau", "Type": "Philosophy, Politics", "TagsList": ["Philosophy", "Politics"] }, { "Name": "\u201cI think, therefore I am.\u201d ", "Person": "Rene Descartes", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cHe who has a why to live can bear almost any how.\u201d", "Person": "Friedrich Nietzsche", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cThe good life is one inspired by love and guided by knowledge.\u201d ", "Person": "Bertrand Russell", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cThe limits of my language mean the limits of my world.\u201d", "Person": "Ludwig Wittgenstein", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cThe smart way to keep people passive and obedient is to strictly limit the spectrum of acceptable opinion.\u201d", "Person": "Noam Chomsky", "Type": "Philosophy, Politics", "TagsList": ["Philosophy", "Politics"] }, { "Name": "\u201cNothing in biology makes sense except in the light of evolution.\u201d ", "Person": "Theodosius Dobzhansky", "Type": "Science", "TagsList": ["Science"] }, { "Name": "\u201cThe greatest show on Earth is life itself.\u201d", "Person": "Richard Dawkins", "Type": "Science", "TagsList": ["Science"] }, { "Name": "\u201cWe are an improbable collection of atoms, organized to ponder our own existence.\u201d", "Person": "Carl Sagan", "Type": "Science", "TagsList": ["Science"] }, { "Name": "\u201cExtraordinary claims require extraordinary evidence.\u201d", "Person": "Carl Sagan", "Type": "Logic, Philosophy", "TagsList": ["Logic", "Philosophy"] }, { "Name": "\u201cThe absence of evidence is not the evidence of absence.\u201d", "Person": "Carl Sagan", "Type": "Logic, Philosophy", "TagsList": ["Logic", "Philosophy"] }, { "Name": "\u201cIf you can\u2019t explain it simply, you don\u2019t understand it well enough.\u201d", "Person": "Albert Einstein", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cEducation is not the learning of facts, but the training of the mind to think.\u201d", "Person": "Albert Einstein", "Type": "Knowledge, Logic", "TagsList": ["Knowledge", "Logic"] }, { "Name": "\u201cScience without religion is lame, religion without science is blind.\u201d", "Person": "Albert Einstein", "Type": "Philosophy, Religion", "TagsList": ["Philosophy", "Religion"] }, { "Name": "\u201cThe distinction between past, present and future is only a stubbornly persistent illusion.\u201d", "Person": "Albert Einstein", "Type": "Philosophy, Science", "TagsList": ["Philosophy", "Science"] }, { "Name": "\u201cTwo things are infinite: the universe and human stupidity; and I\u2019m not sure about the universe.\u201d", "Person": "Albert Einstein", "Type": "Funny", "TagsList": ["Funny"] }, { "Name": "\u201cGravitation is not responsible for people falling in love.\u201d", "Person": "Albert Einstein", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cThe greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cPeople who boast about their IQ are losers.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cQuiet people have the loudest minds.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge, Philosophy", "TagsList": ["Knowledge", "Philosophy"] }, { "Name": "\u201cWhere there\u2019s life, there\u2019s hope.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cYou could never convince a monkey to give you a banana by promising him limitless bananas after death in monkey heaven.\u201d", "Person": "Yuval Noah Harari", "Type": "Logic", "TagsList": ["Logic"] }, { "Name": "\u201cHumans think they are seeking truth, but really they are seeking comfort.\u201d", "Person": "Yuval Noah Harari", "Type": "Knowledge, Logic", "TagsList": ["Knowledge", "Logic"] }, { "Name": "\u201cIf you can\u2019t explain something in simple terms, you don\u2019t understand it.\u201d", "Person": "Richard Feynman", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\"Religion is a culture of faith; science is a culture of doubt.\u201d", "Person": "Richard Feynman", "Type": "Knowledge, Religion, Science", "TagsList": ["Knowledge", "Religion", "Science"] }, { "Name": "\u201cHistory repeats itself, first as tragedy, second as farce.\u201d", "Person": "Karl Marx", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "\u201cA little knowledge is a dangerous thing.\u201d", "Person": "Alexander Pope", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "Really socialism comes from the heart, right? [\u2026] Capitalism comes from the head because there are always cheaters in any system [\u2026] when you're young, if you're not a socialist, you have no heart. When you're older, if you're not a capitalist, you have no head, right?", "Person": "Naval Ravikant", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "If you had gotten all the girls, if you had all the money, if you had everything you wanted, you were good looking in junior high or high school, you wouldn't have done anything with your Life. And you would have peaked early.", "Person": "Naval Ravikant", "Type": "Success", "TagsList": ["Success"] }, { "Name": "I'm always working, but it looks like work to them, but it feels like play to me. And that's how I know no one can compete with me on it. Because I'm just playing 16 hours a day. And if they want to compete with me and they're going to work, they're going to lose.", "Person": "Naval Ravikant", "Type": "Success", "TagsList": ["Success"] }, { "Name": "To gain knowledge and understand the universe. That's what I think. I can't see any higher purpose than that.", "Person": "Demis Hassabis", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cAt the touch of love, everyone becomes a poet.\u201d", "Person": "Plato", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cLove is not about possession. Love is about appreciation.\u201d", "Person": "Osho", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cWhere there is love, there is life.\u201d", "Person": "Mahatma Gandhi", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cLove is the bridge between you and everything.\u201d", "Person": "Rumi", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cIn your smile, I see something more beautiful than the stars.\u201d", "Person": "Beth Revis", "Type": "Love", "TagsList": ["Love"] }, ];
+        const allQuotes = [{ "Name": "\u201cAt the touch of love, everyone becomes a poet.\u201d", "Person": "Plato", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cLove is not about possession. Love is about appreciation.\u201d", "Person": "Osho", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cWhere there is love, there is life.\u201d", "Person": "Mahatma Gandhi", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cLove is the bridge between you and everything.\u201d", "Person": "Rumi", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cIn your smile, I see something more beautiful than the stars.\u201d", "Person": "Beth Revis", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cDemocracy is government of the people, by the people, for the people.\u201d", "Person": "Abraham Lincoln", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "\u201cDemocracy is the worst form of government \u2014 except for all the others that have been tried.\u201d", "Person": "Winston Churchill", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "\u201cDemocracy is the process by which people choose the man who'll get the blame.\u201d", "Person": "Bertrand Russell", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "\u201cThe unexamined life is not worth living.\u201d ", "Person": "Socrates", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cKnowing yourself is the beginning of all wisdom.\u201d", "Person": "Aristotle", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cNo man ever steps in the same river twice, for it\u2019s not the same river and he\u2019s not the same man.\u201d", "Person": "Heraclitus", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cMan is born free, and everywhere he is in chains.\u201d", "Person": "Jean-Jacques Rousseau", "Type": "Philosophy, Politics", "TagsList": ["Philosophy", "Politics"] }, { "Name": "\u201cI think, therefore I am.\u201d ", "Person": "Rene Descartes", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cHe who has a why to live can bear almost any how.\u201d", "Person": "Friedrich Nietzsche", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cThe good life is one inspired by love and guided by knowledge.\u201d ", "Person": "Bertrand Russell", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cThe limits of my language mean the limits of my world.\u201d", "Person": "Ludwig Wittgenstein", "Type": "Philosophy", "TagsList": ["Philosophy"] }, { "Name": "\u201cThe smart way to keep people passive and obedient is to strictly limit the spectrum of acceptable opinion.\u201d", "Person": "Noam Chomsky", "Type": "Philosophy, Politics", "TagsList": ["Philosophy", "Politics"] }, { "Name": "\u201cNothing in biology makes sense except in the light of evolution.\u201d ", "Person": "Theodosius Dobzhansky", "Type": "Science", "TagsList": ["Science"] }, { "Name": "\u201cThe greatest show on Earth is life itself.\u201d", "Person": "Richard Dawkins", "Type": "Science", "TagsList": ["Science"] }, { "Name": "\u201cWe are an improbable collection of atoms, organized to ponder our own existence.\u201d", "Person": "Carl Sagan", "Type": "Science", "TagsList": ["Science"] }, { "Name": "\u201cExtraordinary claims require extraordinary evidence.\u201d", "Person": "Carl Sagan", "Type": "Logic, Philosophy", "TagsList": ["Logic", "Philosophy"] }, { "Name": "\u201cThe absence of evidence is not the evidence of absence.\u201d", "Person": "Carl Sagan", "Type": "Logic, Philosophy", "TagsList": ["Logic", "Philosophy"] }, { "Name": "\u201cIf you can\u2019t explain it simply, you don\u2019t understand it well enough.\u201d", "Person": "Albert Einstein", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cEducation is not the learning of facts, but the training of the mind to think.\u201d", "Person": "Albert Einstein", "Type": "Knowledge, Logic", "TagsList": ["Knowledge", "Logic"] }, { "Name": "\u201cScience without religion is lame, religion without science is blind.\u201d", "Person": "Albert Einstein", "Type": "Philosophy, Religion", "TagsList": ["Philosophy", "Religion"] }, { "Name": "\u201cThe distinction between past, present and future is only a stubbornly persistent illusion.\u201d", "Person": "Albert Einstein", "Type": "Philosophy, Science", "TagsList": ["Philosophy", "Science"] }, { "Name": "\u201cTwo things are infinite: the universe and human stupidity; and I\u2019m not sure about the universe.\u201d", "Person": "Albert Einstein", "Type": "Funny", "TagsList": ["Funny"] }, { "Name": "\u201cGravitation is not responsible for people falling in love.\u201d", "Person": "Albert Einstein", "Type": "Love", "TagsList": ["Love"] }, { "Name": "\u201cThe greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cPeople who boast about their IQ are losers.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cQuiet people have the loudest minds.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge, Philosophy", "TagsList": ["Knowledge", "Philosophy"] }, { "Name": "\u201cWhere there\u2019s life, there\u2019s hope.\u201d", "Person": "Sthephen Hawking", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\u201cYou could never convince a monkey to give you a banana by promising him limitless bananas after death in monkey heaven.\u201d", "Person": "Yuval Noah Harari", "Type": "Logic", "TagsList": ["Logic"] }, { "Name": "\u201cHumans think they are seeking truth, but really they are seeking comfort.\u201d", "Person": "Yuval Noah Harari", "Type": "Knowledge, Logic", "TagsList": ["Knowledge", "Logic"] }, { "Name": "\u201cIf you can\u2019t explain something in simple terms, you don\u2019t understand it.\u201d", "Person": "Richard Feynman", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "\"Religion is a culture of faith; science is a culture of doubt.\u201d", "Person": "Richard Feynman", "Type": "Knowledge, Religion, Science", "TagsList": ["Knowledge", "Religion", "Science"] }, { "Name": "\u201cHistory repeats itself, first as tragedy, second as farce.\u201d", "Person": "Karl Marx", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "\u201cA little knowledge is a dangerous thing.\u201d", "Person": "Alexander Pope", "Type": "Knowledge", "TagsList": ["Knowledge"] }, { "Name": "Really socialism comes from the heart, right? [\u2026] Capitalism comes from the head because there are always cheaters in any system [\u2026] when you're young, if you're not a socialist, you have no heart. When you're older, if you're not a capitalist, you have no head, right?", "Person": "Naval Ravikant", "Type": "Politics", "TagsList": ["Politics"] }, { "Name": "If you had gotten all the girls, if you had all the money, if you had everything you wanted, you were good looking in junior high or high school, you wouldn't have done anything with your Life. And you would have peaked early.", "Person": "Naval Ravikant", "Type": "Success", "TagsList": ["Success"] }, { "Name": "I'm always working, but it looks like work to them, but it feels like play to me. And that's how I know no one can compete with me on it. Because I'm just playing 16 hours a day. And if they want to compete with me and they're going to work, they're going to lose.", "Person": "Naval Ravikant", "Type": "Success", "TagsList": ["Success"] }, { "Name": "To gain knowledge and understand the universe. That's what I think. I can't see any higher purpose than that.", "Person": "Demis Hassabis", "Type": "Philosophy", "TagsList": ["Philosophy"] }];
         const uniqueTags = ["Funny", "Knowledge", "Logic", "Love", "Philosophy", "Politics", "Religion", "Science", "Success"];
         let filteredQuotes = [...allQuotes];
         let currentIndex = 0;
 
         // Filter functionality state
         let selectedTags = new Set();
-        let searchQuery = "";
+        // Remove search query state
 
-        // Init filters
-        const filterContainer = document.getElementById('filter-container');
-        uniqueTags.forEach(tag => {
-            const div = document.createElement('div');
-            div.className = 'filter-chip';
-            div.id = `chip-${tag}`;
-            div.innerText = tag;
-            div.onclick = () => toggleTag(tag);
-            filterContainer.appendChild(div);
-        });
-
-        function toggleTag(tag) {
-            if (selectedTags.has(tag)) {
-                selectedTags.delete(tag);
-                document.getElementById(`chip-${tag}`).classList.remove('active');
-            } else {
-                selectedTags.add(tag);
-                document.getElementById(`chip-${tag}`).classList.add('active');
-            }
-            updateFilterIconState();
-            applyFilters();
-        }
-
-        function toggleFilters() {
-            const drawer = document.getElementById('filter-drawer');
-            const btn = document.getElementById('filter-toggle');
-            drawer.classList.toggle('open');
-            btn.classList.toggle('active'); // Rotation effect
-        }
-
-        function updateFilterIconState() {
-            const btn = document.getElementById('filter-toggle');
-            if (selectedTags.size > 0) {
-                btn.classList.add('has-filters');
-            } else {
-                btn.classList.remove('has-filters');
-            }
-        }
-
-        function handleSearch(query) {
-            searchQuery = query.toLowerCase();
-            applyFilters();
-        }
+        // No more initial filter chip generation needed here
 
         function clearFilters() {
             selectedTags.clear();
-            searchQuery = "";
-            document.getElementById('search-input').value = "";
-            document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-            updateFilterIconState();
+            // No search input to clear
+            // No chips to reset style
 
-            // Optional: Close drawer on clear? Let's keep it open if user clicked clear inside it.
-            // But if called from elsewhere, maybe. For now, just reset.
             applyFilters();
         }
 
         function applyFilters() {
             filteredQuotes = allQuotes.filter(q => {
-                const matchesSearch = q.Name.toLowerCase().includes(searchQuery) || q.Person.toLowerCase().includes(searchQuery);
+                // Removed search matching
                 const matchesTags = selectedTags.size === 0 || q.TagsList.some(tag => selectedTags.has(tag));
-                return matchesSearch && matchesTags;
+                return matchesTags;
             });
-
-            // No longer using the external clear button visibility logic
 
             currentIndex = 0;
             resetCard();
@@ -530,6 +515,68 @@
         });
 
         updateUI();
+
+        // Explore View Logic
+        function openExplore() {
+            const grid = document.getElementById('explore-grid');
+            grid.innerHTML = '';
+
+            // Add "All" option
+            const allCard = createTopicCard('All Quotes', 'Infinity');
+            allCard.onclick = () => {
+                clearFilters();
+                closeExplore();
+            };
+            grid.appendChild(allCard);
+
+            uniqueTags.forEach(tag => {
+                // Use first letter as icon placeholder
+                const card = createTopicCard(tag, tag.charAt(0));
+                card.onclick = () => {
+                    selectTopicFromExplore(tag);
+                };
+                grid.appendChild(card);
+            });
+
+            document.getElementById('explore-overlay').classList.add('open');
+        }
+
+        function closeExplore() {
+            document.getElementById('explore-overlay').classList.remove('open');
+        }
+
+        function createTopicCard(name, iconText) {
+            const div = document.createElement('div');
+            div.className = 'topic-card';
+            div.innerHTML = `
+                <div class="topic-name">${name}</div>
+                <div class="topic-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                    </svg>
+                </div>
+            `;
+            // Customize icon based on type if needed, strict simple SVG for now
+            return div;
+        }
+
+        function selectTopicFromExplore(tag) {
+            // Reset existing filters
+            selectedTags.clear();
+            selectedTags.add(tag);
+
+            // Update UI specific to filters
+            document.querySelectorAll('.filter-chip').forEach(c => {
+                if (c.innerText === tag) c.classList.add('active');
+                else c.classList.remove('active');
+            });
+
+            updateFilterIconState();
+            applyFilters();
+            closeExplore();
+        }
     </script>
 </body>
 
