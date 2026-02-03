@@ -432,6 +432,9 @@
                 });
                 uniqueTags = Array.from(tagSet).sort();
 
+                // Shuffle the quotes so it's random on every load
+                shuffleArray(allQuotes);
+
                 // Initialize app
                 filteredQuotes = [...allQuotes];
                 updateUI();
@@ -441,6 +444,13 @@
                 document.getElementById('quote-el').innerText = "Error loading quotes. Please ensure you are running this on a local server (e.g., Live Server).";
                 document.getElementById('quote-author-front').innerText = "";
             });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
 
         function clearFilters() {
             selectedTags.clear();
