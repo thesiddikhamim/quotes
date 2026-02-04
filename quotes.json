@@ -1,357 +1,357 @@
 [
-  {
-    "Name": "“At the touch of love, everyone becomes a poet.”",
-    "Person": "Plato",
-    "Type": "Love",
-    "TagsList": [
-      "Love"
-    ]
-  },
-  {
-    "Name": "“Love is not about possession. Love is about appreciation.”",
-    "Person": "Osho",
-    "Type": "Love",
-    "TagsList": [
-      "Love"
-    ]
-  },
-  {
-    "Name": "“Where there is love, there is life.”",
-    "Person": "Mahatma Gandhi",
-    "Type": "Love",
-    "TagsList": [
-      "Love"
-    ]
-  },
-  {
-    "Name": "“Love is the bridge between you and everything.”",
-    "Person": "Rumi",
-    "Type": "Love",
-    "TagsList": [
-      "Love"
-    ]
-  },
-  {
-    "Name": "“In your smile, I see something more beautiful than the stars.”",
-    "Person": "Beth Revis",
-    "Type": "Love",
-    "TagsList": [
-      "Love"
-    ]
-  },
-  {
-    "Name": "“Democracy is government of the people, by the people, for the people.”",
-    "Person": "Abraham Lincoln",
-    "Type": "Politics",
-    "TagsList": [
-      "Politics"
-    ]
-  },
-  {
-    "Name": "“Democracy is the worst form of government — except for all the others that have been tried.”",
-    "Person": "Winston Churchill",
-    "Type": "Politics",
-    "TagsList": [
-      "Politics"
-    ]
-  },
-  {
-    "Name": "“Democracy is the process by which people choose the man who'll get the blame.”",
-    "Person": "Bertrand Russell",
-    "Type": "Politics",
-    "TagsList": [
-      "Politics"
-    ]
-  },
-  {
-    "Name": "“The unexamined life is not worth living.” ",
-    "Person": "Socrates",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“Knowing yourself is the beginning of all wisdom.”",
-    "Person": "Aristotle",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“No man ever steps in the same river twice, for it’s not the same river and he’s not the same man.”",
-    "Person": "Heraclitus",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“Man is born free, and everywhere he is in chains.”",
-    "Person": "Jean-Jacques Rousseau",
-    "Type": "Philosophy, Politics",
-    "TagsList": [
-      "Philosophy",
-      "Politics"
-    ]
-  },
-  {
-    "Name": "“I think, therefore I am.” ",
-    "Person": "Rene Descartes",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“He who has a why to live can bear almost any how.”",
-    "Person": "Friedrich Nietzsche",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“The good life is one inspired by love and guided by knowledge.” ",
-    "Person": "Bertrand Russell",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“The limits of my language mean the limits of my world.”",
-    "Person": "Ludwig Wittgenstein",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“The smart way to keep people passive and obedient is to strictly limit the spectrum of acceptable opinion.”",
-    "Person": "Noam Chomsky",
-    "Type": "Philosophy, Politics",
-    "TagsList": [
-      "Philosophy",
-      "Politics"
-    ]
-  },
-  {
-    "Name": "“Nothing in biology makes sense except in the light of evolution.” ",
-    "Person": "Theodosius Dobzhansky",
-    "Type": "Science",
-    "TagsList": [
-      "Science"
-    ]
-  },
-  {
-    "Name": "“The greatest show on Earth is life itself.”",
-    "Person": "Richard Dawkins",
-    "Type": "Science",
-    "TagsList": [
-      "Science"
-    ]
-  },
-  {
-    "Name": "“We are an improbable collection of atoms, organized to ponder our own existence.”",
-    "Person": "Carl Sagan",
-    "Type": "Science",
-    "TagsList": [
-      "Science"
-    ]
-  },
-  {
-    "Name": "“Extraordinary claims require extraordinary evidence.”",
-    "Person": "Carl Sagan",
-    "Type": "Logic, Philosophy",
-    "TagsList": [
-      "Logic",
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“The absence of evidence is not the evidence of absence.”",
-    "Person": "Carl Sagan",
-    "Type": "Logic, Philosophy",
-    "TagsList": [
-      "Logic",
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“If you can’t explain it simply, you don’t understand it well enough.”",
-    "Person": "Albert Einstein",
-    "Type": "Knowledge",
-    "TagsList": [
-      "Knowledge"
-    ]
-  },
-  {
-    "Name": "“Education is not the learning of facts, but the training of the mind to think.”",
-    "Person": "Albert Einstein",
-    "Type": "Knowledge, Logic",
-    "TagsList": [
-      "Knowledge",
-      "Logic"
-    ]
-  },
-  {
-    "Name": "“Science without religion is lame, religion without science is blind.”",
-    "Person": "Albert Einstein",
-    "Type": "Philosophy, Religion",
-    "TagsList": [
-      "Philosophy",
-      "Religion"
-    ]
-  },
-  {
-    "Name": "“The distinction between past, present and future is only a stubbornly persistent illusion.”",
-    "Person": "Albert Einstein",
-    "Type": "Philosophy, Science",
-    "TagsList": [
-      "Philosophy",
-      "Science"
-    ]
-  },
-  {
-    "Name": "“Two things are infinite: the universe and human stupidity; and I’m not sure about the universe.”",
-    "Person": "Albert Einstein",
-    "Type": "Funny",
-    "TagsList": [
-      "Funny"
-    ]
-  },
-  {
-    "Name": "“Gravitation is not responsible for people falling in love.”",
-    "Person": "Albert Einstein",
-    "Type": "Love",
-    "TagsList": [
-      "Love"
-    ]
-  },
-  {
-    "Name": "“The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.”",
-    "Person": "Sthephen Hawking",
-    "Type": "Knowledge",
-    "TagsList": [
-      "Knowledge"
-    ]
-  },
-  {
-    "Name": "“People who boast about their IQ are losers.”",
-    "Person": "Sthephen Hawking",
-    "Type": "Knowledge",
-    "TagsList": [
-      "Knowledge"
-    ]
-  },
-  {
-    "Name": "“Quiet people have the loudest minds.”",
-    "Person": "Sthephen Hawking",
-    "Type": "Knowledge, Philosophy",
-    "TagsList": [
-      "Knowledge",
-      "Philosophy"
-    ]
-  },
-  {
-    "Name": "“Where there’s life, there’s hope.”",
-    "Person": "Sthephen Hawking",
-    "Type": "Knowledge",
-    "TagsList": [
-      "Knowledge"
-    ]
-  },
-  {
-    "Name": "“You could never convince a monkey to give you a banana by promising him limitless bananas after death in monkey heaven.”",
-    "Person": "Yuval Noah Harari",
-    "Type": "Logic",
-    "TagsList": [
-      "Logic"
-    ]
-  },
-  {
-    "Name": "“Humans think they are seeking truth, but really they are seeking comfort.”",
-    "Person": "Yuval Noah Harari",
-    "Type": "Knowledge, Logic",
-    "TagsList": [
-      "Knowledge",
-      "Logic"
-    ]
-  },
-  {
-    "Name": "“If you can’t explain something in simple terms, you don’t understand it.”",
-    "Person": "Richard Feynman",
-    "Type": "Knowledge",
-    "TagsList": [
-      "Knowledge"
-    ]
-  },
-  {
-    "Name": "\"Religion is a culture of faith; science is a culture of doubt.”",
-    "Person": "Richard Feynman",
-    "Type": "Knowledge, Religion, Science",
-    "TagsList": [
-      "Knowledge",
-      "Religion",
-      "Science"
-    ]
-  },
-  {
-    "Name": "“History repeats itself, first as tragedy, second as farce.”",
-    "Person": "Karl Marx",
-    "Type": "Politics",
-    "TagsList": [
-      "Politics"
-    ]
-  },
-  {
-    "Name": "“A little knowledge is a dangerous thing.”",
-    "Person": "Alexander Pope",
-    "Type": "Knowledge",
-    "TagsList": [
-      "Knowledge"
-    ]
-  },
-  {
-    "Name": "Really socialism comes from the heart, right? […] Capitalism comes from the head because there are always cheaters in any system.",
-    "Person": "Naval Ravikant",
-    "Type": "Politics",
-    "TagsList": [
-      "Politics"
-    ]
-  },
-  {
-    "Name": "If you had gotten all the girls, if you had all the money, if you had everything you wanted, you were good looking in junior high or high school, you wouldn't have done anything with your Life. And you would have peaked early.",
-    "Person": "Naval Ravikant",
-    "Type": "Success",
-    "TagsList": [
-      "Success"
-    ]
-  },
-  {
-    "Name": "I know no one can compete with me on it. Because I'm just playing 16 hours a day. And if they want to compete with me and they're going to work, they're going to lose.",
-    "Person": "Naval Ravikant",
-    "Type": "Success",
-    "TagsList": [
-      "Success"
-    ]
-  },
-  {
-    "Name":"I'm always working, but it looks like work to them, but it feels like play to me.",
-    "Person": "Naval Ravikant",
-    "Type": "Success",
-    "TagsList": [
-      "Success"]
-
-  },
-  {
-    "Name": "To gain knowledge and understand the universe. That's what I think. I can't see any higher purpose than that.",
-    "Person": "Demis Hassabis",
-    "Type": "Philosophy",
-    "TagsList": [
-      "Philosophy"
-    ]
-  }
+    {
+        "id": 1,
+        "quote": "At the touch of love, everyone becomes a poet.",
+        "author": "Plato",
+        "tags": [
+            "Love"
+        ]
+    },
+    {
+        "id": 2,
+        "quote": "Love is not about possession. Love is about appreciation.",
+        "author": "Osho",
+        "tags": [
+            "Love"
+        ]
+    },
+    {
+        "id": 3,
+        "quote": "Where there is love, there is life.",
+        "author": "Mahatma Gandhi",
+        "tags": [
+            "Love"
+        ]
+    },
+    {
+        "id": 4,
+        "quote": "Love is the bridge between you and everything.",
+        "author": "Rumi",
+        "tags": [
+            "Love"
+        ]
+    },
+    {
+        "id": 5,
+        "quote": "In your smile, I see something more beautiful than the stars.",
+        "author": "Beth Revis",
+        "tags": [
+            "Love"
+        ]
+    },
+    {
+        "id": 6,
+        "quote": "Democracy is government of the people, by the people, for the people.",
+        "author": "Abraham Lincoln",
+        "tags": [
+            "Politics"
+        ]
+    },
+    {
+        "id": 7,
+        "quote": "Democracy is the worst form of government — except for all the others that have been tried.",
+        "author": "Winston Churchill",
+        "tags": [
+            "Politics"
+        ]
+    },
+    {
+        "id": 8,
+        "quote": "Democracy is the process by which people choose the man who'll get the blame.",
+        "author": "Bertrand Russell",
+        "tags": [
+            "Politics"
+        ]
+    },
+    {
+        "id": 9,
+        "quote": "The unexamined life is not worth living.",
+        "author": "Socrates",
+        "tags": [
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 10,
+        "quote": "Knowing yourself is the beginning of all wisdom.",
+        "author": "Aristotle",
+        "tags": [
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 11,
+        "quote": "No man ever steps in the same river twice, for it's not the same river and he's not the same man.",
+        "author": "Heraclitus",
+        "tags": [
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 12,
+        "quote": "Man is born free, and everywhere he is in chains.",
+        "author": "Jean-Jacques Rousseau",
+        "tags": [
+            "Philosophy",
+            "Politics"
+        ]
+    },
+    {
+        "id": 13,
+        "quote": "I think, therefore I am.",
+        "author": "Rene Descartes",
+        "tags": [
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 14,
+        "quote": "He who has a why to live can bear almost any how.",
+        "author": "Friedrich Nietzsche",
+        "tags": [
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 15,
+        "quote": "The good life is one inspired by love and guided by knowledge.",
+        "author": "Bertrand Russell",
+        "tags": [
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 16,
+        "quote": "The limits of my language mean the limits of my world.",
+        "author": "Ludwig Wittgenstein",
+        "tags": [
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 17,
+        "quote": "The smart way to keep people passive and obedient is to strictly limit the spectrum of acceptable opinion.",
+        "author": "Noam Chomsky",
+        "tags": [
+            "Philosophy",
+            "Politics"
+        ]
+    },
+    {
+        "id": 18,
+        "quote": "Nothing in biology makes sense except in the light of evolution.",
+        "author": "Theodosius Dobzhansky",
+        "tags": [
+            "Science"
+        ]
+    },
+    {
+        "id": 19,
+        "quote": "The greatest show on Earth is life itself.",
+        "author": "Richard Dawkins",
+        "tags": [
+            "Science"
+        ]
+    },
+    {
+        "id": 20,
+        "quote": "We are an improbable collection of atoms, organized to ponder our own existence.",
+        "author": "Carl Sagan",
+        "tags": [
+            "Science"
+        ]
+    },
+    {
+        "id": 21,
+        "quote": "Extraordinary claims require extraordinary evidence.",
+        "author": "Carl Sagan",
+        "tags": [
+            "Logic",
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 22,
+        "quote": "The absence of evidence is not the evidence of absence.",
+        "author": "Carl Sagan",
+        "tags": [
+            "Logic",
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 23,
+        "quote": "If you can't explain it simply, you don't understand it well enough.",
+        "author": "Albert Einstein",
+        "tags": [
+            "Knowledge"
+        ]
+    },
+    {
+        "id": 24,
+        "quote": "Education is not the learning of facts, but the training of the mind to think.",
+        "author": "Albert Einstein",
+        "tags": [
+            "Knowledge",
+            "Logic"
+        ]
+    },
+    {
+        "id": 25,
+        "quote": "Science without religion is lame, religion without science is blind.",
+        "author": "Albert Einstein",
+        "tags": [
+            "Philosophy",
+            "Religion"
+        ]
+    },
+    {
+        "id": 26,
+        "quote": "The distinction between past, present and future is only a stubbornly persistent illusion.",
+        "author": "Albert Einstein",
+        "tags": [
+            "Philosophy",
+            "Science"
+        ]
+    },
+    {
+        "id": 27,
+        "quote": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+        "author": "Albert Einstein",
+        "tags": [
+            "Funny"
+        ]
+    },
+    {
+        "id": 28,
+        "quote": "Gravitation is not responsible for people falling in love.",
+        "author": "Albert Einstein",
+        "tags": [
+            "Love"
+        ]
+    },
+    {
+        "id": 29,
+        "quote": "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.",
+        "author": "Sthephen Hawking",
+        "tags": [
+            "Knowledge"
+        ]
+    },
+    {
+        "id": 30,
+        "quote": "People who boast about their IQ are losers.",
+        "author": "Sthephen Hawking",
+        "tags": [
+            "Knowledge"
+        ]
+    },
+    {
+        "id": 31,
+        "quote": "Quiet people have the loudest minds.",
+        "author": "Sthephen Hawking",
+        "tags": [
+            "Knowledge",
+            "Philosophy"
+        ]
+    },
+    {
+        "id": 32,
+        "quote": "Where there's life, there's hope.",
+        "author": "Sthephen Hawking",
+        "tags": [
+            "Knowledge"
+        ]
+    },
+    {
+        "id": 33,
+        "quote": "You could never convince a monkey to give you a banana by promising him limitless bananas after death in monkey heaven.",
+        "author": "Yuval Noah Harari",
+        "tags": [
+            "Logic"
+        ]
+    },
+    {
+        "id": 34,
+        "quote": "Humans think they are seeking truth, but really they are seeking comfort.",
+        "author": "Yuval Noah Harari",
+        "tags": [
+            "Knowledge",
+            "Logic"
+        ]
+    },
+    {
+        "id": 35,
+        "quote": "If you can't explain something in simple terms, you don't understand it.",
+        "author": "Richard Feynman",
+        "tags": [
+            "Knowledge"
+        ]
+    },
+    {
+        "id": 36,
+        "quote": "Religion is a culture of faith; science is a culture of doubt.",
+        "author": "Richard Feynman",
+        "tags": [
+            "Knowledge",
+            "Religion",
+            "Science"
+        ]
+    },
+    {
+        "id": 37,
+        "quote": "History repeats itself, first as tragedy, second as farce.",
+        "author": "Karl Marx",
+        "tags": [
+            "Politics"
+        ]
+    },
+    {
+        "id": 38,
+        "quote": "A little knowledge is a dangerous thing.",
+        "author": "Alexander Pope",
+        "tags": [
+            "Knowledge"
+        ]
+    },
+    {
+        "id": 39,
+        "quote": "Really socialism comes from the heart, right? […] Capitalism comes from the head because there are always cheaters in any system.",
+        "author": "Naval Ravikant",
+        "tags": [
+            "Politics"
+        ]
+    },
+    {
+        "id": 40,
+        "quote": "If you had gotten all the girls, if you had all the money, if you had everything you wanted, you were good looking in junior high or high school, you wouldn't have done anything with your Life. And you would have peaked early.",
+        "author": "Naval Ravikant",
+        "tags": [
+            "Success"
+        ]
+    },
+    {
+        "id": 41,
+        "quote": "I know no one can compete with me on it. Because I'm just playing 16 hours a day. And if they want to compete with me and they're going to work, they're going to lose.",
+        "author": "Naval Ravikant",
+        "tags": [
+            "Success"
+        ]
+    },
+    {
+        "id": 42,
+        "quote": "I'm always working, but it looks like work to them, but it feels like play to me.",
+        "author": "Naval Ravikant",
+        "tags": [
+            "Success"
+        ]
+    },
+    {
+        "id": 43,
+        "quote": "To gain knowledge and understand the universe. That's what I think. I can't see any higher purpose than that.",
+        "author": "Demis Hassabis",
+        "tags": [
+            "Philosophy"
+        ]
+    }
 ]
