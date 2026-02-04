@@ -93,6 +93,18 @@
             font-style: italic;
         }
 
+        .quote-text::before {
+            content: '"';
+            opacity: 0.3;
+            margin-right: 0.1em;
+        }
+
+        .quote-text::after {
+            content: '"';
+            opacity: 0.3;
+            margin-left: 0.1em;
+        }
+
         .quote-author-name {
             font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
@@ -357,8 +369,8 @@
                 // Dynamically extract unique tags from the data
                 const tagSet = new Set();
                 allQuotes.forEach(q => {
-                    if (q.TagsList) {
-                        q.TagsList.forEach(tag => tagSet.add(tag));
+                    if (q.tags) {
+                        q.tags.forEach(tag => tagSet.add(tag));
                     }
                 });
                 uniqueTags = Array.from(tagSet).sort();
@@ -389,7 +401,7 @@
 
         function applyFilters() {
             filteredQuotes = allQuotes.filter(q => {
-                const matchesTags = selectedTags.size === 0 || q.TagsList.some(tag => selectedTags.has(tag));
+                const matchesTags = selectedTags.size === 0 || q.tags.some(tag => selectedTags.has(tag));
                 return matchesTags;
             });
 
@@ -419,8 +431,8 @@
 
                 section.innerHTML = `
                     <div class="card-face">
-                        <div class="quote-text">${q.Name}</div>
-                        <div class="quote-author-name">— ${q.Person}</div>
+                        <div class="quote-text">${q.quote}</div>
+                        <div class="quote-author-name">— ${q.author}</div>
                     </div>
                 `;
 
