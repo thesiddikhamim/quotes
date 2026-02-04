@@ -315,7 +315,7 @@
     ]
   },
   {
-    "Name": "Really socialism comes from the heart, right? […] Capitalism comes from the head because there are always cheaters in any system […] when you're young, if you're not a socialist, you have no heart. When you're older, if you're not a capitalist, you have no head, right?",
+    "Name": "Really socialism comes from the heart, right? […] Capitalism comes from the head because there are always cheaters in any system.",
     "Person": "Naval Ravikant",
     "Type": "Politics",
     "TagsList": [
@@ -331,13 +331,21 @@
     ]
   },
   {
-    "Name": "I'm always working, but it looks like work to them, but it feels like play to me. And that's how I know no one can compete with me on it. Because I'm just playing 16 hours a day. And if they want to compete with me and they're going to work, they're going to lose.",
+    "Name": "I know no one can compete with me on it. Because I'm just playing 16 hours a day. And if they want to compete with me and they're going to work, they're going to lose.",
     "Person": "Naval Ravikant",
     "Type": "Success",
     "TagsList": [
       "Success"
     ]
   },
+  {
+    "Name":"I'm always working, but it looks like work to them, but it feels like play to me."
+    "Person": "Naval Ravikant",
+    "Type": "Success",
+    "TagsList": [
+      "Success"
+
+  }
   {
     "Name": "To gain knowledge and understand the universe. That's what I think. I can't see any higher purpose than that.",
     "Person": "Demis Hassabis",
